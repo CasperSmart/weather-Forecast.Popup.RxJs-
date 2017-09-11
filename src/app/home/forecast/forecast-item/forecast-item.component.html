@@ -1,0 +1,14 @@
+<div class="panel panel-default" *ngFor="let item of weather">
+  <div class="panel-heading">
+    <h3 class="panel-title">{{item.dt_txt  | date : 'dd/MM/yyyy'}}</h3>
+  </div>
+  <div class="panel-body">
+      
+       <h1>{{item.weather[0].description}}  <img src="{{env.GET_WEAHTHER_IMAGE_URL(item?.weather[0].icon)}}" alt=""></h1>
+       <h3>
+      min <span style="color: cornflowerblue">{{item.main.temp_min}}</span>
+      max <span style="color: crimson">{{item.main.temp_min}}</span>
+       </h3>
+  </div>
+  <div class="panel-footer"><h4>Wind speed {{item.wind.speed }}</h4></div>
+</div>
